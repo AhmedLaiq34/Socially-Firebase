@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".logout_page"
+    android:background="@color/brown">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/logout_bg"
+        android:layout_margin="20dp"
+        >
+
+
+
+        <RelativeLayout
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:background="@drawable/logout_circle"
+            android:layout_centerInParent="true"
+            android:id="@+id/sociallyCircle">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Log out"
+                android:textSize="42sp"
+                android:textColor="@color/off_white"
+                android:layout_centerInParent="true"
+                android:fontFamily="@font/instagram_sans_headline"
+                android:clickable="true"
+                android:focusable="true">
+
+            </TextView>
+
+
+
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/sociallyCircle"
+            android:text="Return"
+            android:textColor="@color/brown"
+            android:layout_centerHorizontal="true"
+            android:textSize="25sp"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/instagram_sans_headline"
+            android:clickable="true"
+            android:focusable="true"
+            android:id="@+id/returnText">
+
+        </TextView>
+
+
+
+    </RelativeLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

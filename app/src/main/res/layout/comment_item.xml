@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="8dp">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!-- Commenter profile photo -->
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/civCommenter"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:src="@drawable/placeholder_pfp"
+            android:layout_marginEnd="8dp" />
+
+        <!-- Username + comment text -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/usernameText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textColor="@android:color/black"
+                android:textStyle="bold"
+                android:lineSpacingExtra="2dp"
+                android:text="Username"
+                android:layout_marginTop="8dp"/>
+
+
+            <TextView
+                android:id="@+id/commentText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textColor="@android:color/black"
+                android:lineSpacingExtra="2dp"
+                android:text="Comment goes over here, this is an example comment ."
+                android:layout_marginTop="6dp"
+                android:layout_marginEnd="60dp"/>
+
+
+        </LinearLayout>
+
+
+
+
+
+
+
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"
+        android:layout_marginTop="16dp"
+        android:layout_marginHorizontal="10dp"
+        />
+
+
+
+</LinearLayout>

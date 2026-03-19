@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <!-- Title at top -->
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Socially"
+        android:textColor="@color/brown"
+        android:textSize="50sp"
+        android:textStyle="bold"
+        android:fontFamily="@font/instagram_sans_headline"
+        android:layout_marginTop="24dp"
+        android:layout_centerHorizontal="true" />
+
+    <!-- Main Upload Section -->
+    <LinearLayout
+        android:id="@+id/uploadContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_title"
+        android:layout_above="@id/uploadBottomNavDivider"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Image Selection Container -->
+        <RelativeLayout
+            android:id="@+id/imageSelectArea"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp">
+
+            <FrameLayout
+                android:id="@+id/imagePickerContainer"
+                android:layout_width="250dp"
+                android:layout_height="350dp"
+                android:background="@drawable/upload_square"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/iv_selectedImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:visibility="gone"
+                    android:adjustViewBounds="true"
+                    />
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/tv_selectPrompt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="Tap to select an image"
+                android:textColor="@color/brown"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <!-- Upload progress (optional) -->
+        <TextView
+            android:id="@+id/tv_uploadStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Uploading..."
+            android:textColor="@color/light_brown"
+            android:textSize="14sp"
+            android:layout_marginTop="10dp"
+            android:visibility="gone" />
+
+        <!-- Upload Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_upload"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginTop="25dp"
+            android:text="Upload Story"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            android:fontFamily="@font/instagram_sans"
+            app:cornerRadius="10dp"
+            android:backgroundTint="@color/light_brown" />
+
+        <!-- Cancel Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/cancelButton"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginTop="12dp"
+            android:text="Cancel"
+            android:textAllCaps="false"
+            android:textColor="@color/brown"
+            android:textSize="16sp"
+            android:fontFamily="@font/instagram_sans"
+            android:backgroundTint="@color/white"
+            app:cornerRadius="10dp"
+            app:strokeWidth="1dp"
+            app:strokeColor="@color/light_brown" />
+    </LinearLayout>
+
+    <!-- Divider -->
+    <View
+        android:id="@+id/uploadBottomNavDivider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_above="@id/uploadBottomNavigation"
+        android:background="#E0E0E0" />
+
+    <!-- Bottom Navigation -->
+
+
+    <LinearLayout
+        android:id="@+id/uploadBottomNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:background="@color/white"
+        android:elevation="4dp">
+
+        <!-- Post Tab -->
+        <LinearLayout
+            android:id="@+id/postTab"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?attr/selectableItemBackground">
+
+            <TextView
+                android:id="@+id/postTabText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Post"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:fontFamily="@font/instagram_sans" />
+
+
+        </LinearLayout>
+
+        <!-- Story Tab -->
+        <LinearLayout
+            android:id="@+id/storyTab"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?attr/selectableItemBackground">
+
+            <TextView
+                android:id="@+id/storyTabText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Story"
+                android:textColor="@color/brown"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:fontFamily="@font/instagram_sans" />
+
+            <View
+                android:id="@+id/postTabIndicator"
+                android:layout_width="40dp"
+                android:layout_height="3dp"
+                android:layout_marginTop="4dp"
+                android:background="@color/brown" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

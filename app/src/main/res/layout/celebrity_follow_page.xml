@@ -1,0 +1,466 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@android:color/white"
+    android:id="@+id/main">
+
+    <!-- Top Bar -->
+    <RelativeLayout
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:paddingHorizontal="12dp"
+        android:paddingVertical="8dp"
+        android:layout_alignParentTop="true">
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/back_button_login_page"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:contentDescription="Back"/>
+
+        <TextView
+            android:id="@+id/tvUsername"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:layout_centerInParent="true"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:maxWidth="200dp"/>
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/black_more"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:contentDescription="More"/>
+    </RelativeLayout>
+
+    <!-- Scrollable Content -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_below="@id/topBar"
+        android:layout_above="@id/bottomNavContainer"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Profile Header Section -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="12dp">
+
+                <!-- Profile Picture & Stats -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/pfp"
+                        android:layout_width="85dp"
+                        android:layout_height="85dp"
+                        android:layout_marginEnd="20dp"
+                        android:scaleType="centerCrop"
+                        />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tvPostCount"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/instagram_sans_bold"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/black"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/instagram_sans"
+                                android:text="posts"
+                                android:textSize="12sp"
+                                android:textColor="@color/black"/>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tvFollowerCount"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/instagram_sans_bold"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/black"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/instagram_sans"
+                                android:text="followers"
+                                android:textSize="12sp"
+                                android:textColor="@color/black"/>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tvFollowingCount"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/instagram_sans_bold"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/black"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/instagram_sans"
+                                android:text="following"
+                                android:textSize="12sp"
+                                android:textColor="@color/black"/>
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Bio Section -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="12dp">
+
+                    <TextView
+                        android:id="@+id/tvDisplayName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/instagram_sans_bold"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:id="@+id/tvBio"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:textSize="13sp"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/instagram_sans"/>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="4dp"
+                        android:gravity="center_vertical">
+
+                        <ImageView
+                            android:layout_width="14dp"
+                            android:layout_height="14dp"
+                            android:layout_marginEnd="4dp"
+                            android:src="@drawable/link"
+                            android:contentDescription="Link"/>
+
+                        <TextView
+                            android:id="@+id/tvLink"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:textSize="13sp"
+                            android:fontFamily="@font/instagram_sans"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Action Buttons -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnFollow"
+                        android:layout_width="0dp"
+                        android:layout_height="36dp"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="4dp"
+                        android:backgroundTint="#b17f57"
+                        android:fontFamily="@font/instagram_sans_bold"
+                        android:stateListAnimator="@null"
+                        android:text="Follow"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        app:cornerRadius="8dp"
+                        app:rippleColor="#22000000"
+                        android:textSize="13sp"/>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/message"
+                        android:layout_width="0dp"
+                        android:layout_height="36dp"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="4dp"
+                        android:backgroundTint="#dee2e6"
+                        android:fontFamily="@font/instagram_sans_bold"
+                        android:stateListAnimator="@null"
+                        android:text="Message"
+                        android:textAllCaps="false"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        app:cornerRadius="8dp"
+                        app:rippleColor="#22000000"
+                        android:textSize="13sp"/>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:layout_width="0dp"
+                        android:layout_height="36dp"
+                        android:layout_weight="0.8"
+                        android:layout_marginEnd="4dp"
+                        android:backgroundTint="#dee2e6"
+                        android:fontFamily="@font/instagram_sans_bold"
+                        android:stateListAnimator="@null"
+                        android:text="Email"
+                        android:textAllCaps="false"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        app:cornerRadius="8dp"
+                        app:rippleColor="#22000000"
+                        android:textSize="13sp"/>
+
+                    <ImageView
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:background="@drawable/add_user_bg"
+                        android:padding="6dp"
+                        android:src="@drawable/user_add"
+                        android:contentDescription="Add user"/>
+                </LinearLayout>
+
+                <!-- Highlights Horizontal Scroll -->
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:scrollbars="none">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingEnd="16dp">
+
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:orientation="vertical">
+
+                            <FrameLayout
+                                android:layout_width="64dp"
+                                android:layout_height="64dp"
+                                android:background="@drawable/celeb_highlights_circle"
+                                android:padding="3dp">
+
+                                <de.hdodenhof.circleimageview.CircleImageView
+                                    android:id="@+id/h5"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:padding="18dp"
+                                    android:scaleType="centerCrop"
+                                    android:src="@drawable/black_plus"/>
+                            </FrameLayout>
+
+                            <TextView
+                                android:layout_width="64dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:ellipsize="end"
+                                android:fontFamily="@font/instagram_sans"
+                                android:gravity="center"
+                                android:maxLines="1"
+                                android:text="New"
+                                android:textColor="@color/black"
+                                android:textSize="11sp"/>
+                        </LinearLayout>
+                    </LinearLayout>
+                </HorizontalScrollView>
+            </LinearLayout>
+
+            <!-- Tab Section -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="28dp"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/black_grid"
+                    android:contentDescription="Grid"/>
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="28dp"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/tagged_icon"
+                    android:contentDescription="Tagged"/>
+            </LinearLayout>
+
+            <!-- Tab Indicator -->
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_gravity="start"
+                android:layout_marginStart="0dp"
+                android:background="@color/black"/>
+
+            <!-- Posts Grid -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewPosts"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                android:nestedScrollingEnabled="false"
+                android:padding="1dp"
+                android:scrollbars="none"
+                tools:listitem="@layout/profile_post_item"/>
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Bottom Navigation -->
+    <FrameLayout
+        android:id="@+id/bottomNavContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+
+        <View
+            android:background="#33000000"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_gravity="top"/>
+
+        <LinearLayout
+            android:id="@+id/bottom_nav"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:elevation="4dp"
+            android:gravity="center"
+            android:paddingHorizontal="16dp"
+            android:background="@color/white">
+
+            <ImageView
+                android:id="@+id/bottom_nav_home"
+                android:layout_height="26dp"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:scaleType="fitCenter"
+                android:contentDescription="home"
+                android:src="@drawable/home_unfilled"/>
+
+            <ImageView
+                android:id="@+id/bottom_nav_search"
+                android:contentDescription="search"
+                android:src="@drawable/search_canva"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="26dp"
+                android:scaleType="fitCenter"
+                android:clickable="true"
+                android:focusable="true"/>
+
+            <ImageView
+                android:id="@+id/bottom_nav_create"
+                android:layout_width="0dp"
+                android:contentDescription="add"
+                android:layout_height="26dp"
+                android:src="@drawable/upload_plus_bottom_nav"
+                android:scaleType="fitCenter"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:focusable="true"/>
+
+            <ImageView
+                android:id="@+id/bottom_nav_heart"
+                android:layout_width="0dp"
+                android:layout_height="24dp"
+                android:layout_weight="1"
+                android:scaleType="fitCenter"
+                android:src="@drawable/heart_unfilled"
+                android:contentDescription="likes"/>
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center">
+
+                <FrameLayout
+                    android:background="@drawable/highlight_bg_circle"
+                    android:layout_height="28dp"
+                    android:layout_width="28dp"
+                    android:layout_gravity="center"
+                    android:padding="2dp">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/bottom_nav_profile"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"/>
+                </FrameLayout>
+            </FrameLayout>
+        </LinearLayout>
+    </FrameLayout>
+</RelativeLayout>

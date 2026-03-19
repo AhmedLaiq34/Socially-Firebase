@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:id="@+id/main">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.33">
+
+            <ImageView
+                android:id="@+id/back_button"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/brown_back_button"
+                android:layout_centerInParent="true"
+                android:translationX="-30dp" />
+
+        </RelativeLayout>
+
+        <!-- Top Title -->
+        <TextView
+            android:id="@+id/comments"
+            android:layout_width="0dp"
+            android:layout_weight="0.33"
+            android:layout_height="wrap_content"
+            android:text="Comments"
+            android:textSize="23sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:padding="16dp"
+            android:fontFamily="@font/instagram_sans_headline"
+            android:textColor="@color/brown"
+            />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.33">
+
+        </View>
+
+    </LinearLayout>
+
+
+
+    <!-- Divider -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray" />
+
+    <!-- RecyclerView for comments -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvComments"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="8dp"
+        android:clipToPadding="false"
+        android:scrollbars="vertical"
+        tools:listitem="@layout/comment_item"/>
+
+    <!-- Bottom Divider -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray" />
+
+    <!-- Add comment section -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="8dp"
+        android:gravity="center_vertical"
+        android:layout_weight="0.02">
+
+        <!-- Current user profile image -->
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/civCurrentUser"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/placeholder_pfp"
+            android:layout_marginEnd="8dp" />
+
+        <!-- EditText -->
+        <EditText
+            android:id="@+id/etAddComment"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:background="@drawable/rounded_edittext"
+            android:hint="Add Comment"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:textSize="15sp"
+            android:singleLine="true" />
+
+        <!-- Send icon -->
+        <ImageView
+            android:id="@+id/ivSendComment"
+            android:layout_width="46dp"
+            android:layout_height="46dp"
+            android:src="@drawable/add_comment"
+            android:layout_marginStart="8dp"
+            android:contentDescription="Send comment"
+            />
+    </LinearLayout>
+
+</LinearLayout>

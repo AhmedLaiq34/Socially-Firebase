@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <!-- Required permissions -->
+    <uses-permission android:name="android.permission.INTERNET" /> <!-- Optional permissions -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.BLUETOOTH" /> <!-- For devices running Android 12 (API level 32) or higher and integrating Agora Voice SDK version v4.1.0 or lower, you also need to add the following permissions -->
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" /> <!-- For Android 12 or higher, the following permissions are also required -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.BLUETOOTH_SCAN" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" /> <!-- Add this permission for screenshot detection -->
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    <uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@drawable/logo"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Socially">
+
+
+        <activity
+            android:name=".post_view_page"
+            android:exported="false" />
+        <activity
+            android:name=".logout_page"
+            android:exported="false" />
+        <activity
+            android:name=".item_message_received"
+            android:exported="false" />
+        <activity
+            android:name=".video_call_page"
+            android:exported="false" />
+        <activity
+            android:name=".item_message_sent"
+            android:exported="false" />
+        <activity
+            android:name=".following_page"
+            android:exported="false" />
+        <activity
+            android:name=".followers_page"
+            android:exported="false" />
+        <activity
+            android:name=".chat_item_layout"
+            android:exported="false" />
+        <activity
+            android:name=".story_item_layout"
+            android:exported="false" />
+        <activity
+            android:name=".upload_page_story"
+            android:exported="false" />
+        <activity
+            android:name=".own_posts_feed"
+            android:exported="false" />
+        <activity
+            android:name=".comments_page"
+            android:exported="false" />
+        <activity
+            android:name=".upload_page"
+            android:exported="false" />
+        <activity
+            android:name=".story_page"
+            android:exported="false" />
+        <activity
+            android:name=".celebrity_page"
+            android:exported="false" />
+        <activity
+            android:name=".celebrity_follow_page"
+            android:exported="false" />
+        <activity
+            android:name=".story_draft"
+            android:exported="false" />
+        <activity
+            android:name=".select_photo_page"
+            android:exported="false" />
+        <activity
+            android:name=".camera_page"
+            android:exported="false" />
+        <activity
+            android:name=".edit_profile_page"
+            android:exported="false" />
+        <activity
+            android:name=".highlight_page"
+            android:exported="false" />
+        <activity
+            android:name=".profile_page"
+            android:exported="false" />
+        <activity
+            android:name=".notis_page_you"
+            android:exported="false" />
+        <activity
+            android:name=".notis_page"
+            android:exported="false" />
+        <activity
+            android:name=".call_page"
+            android:exported="false" />
+        <activity
+            android:name=".chat_page"
+            android:exported="false" />
+        <activity
+            android:name=".all_chats_page"
+            android:exported="false" />
+        <activity
+            android:name=".search_page"
+            android:exported="false" />
+        <activity
+            android:name=".for_you_page"
+            android:exported="false" />
+        <activity
+            android:name=".home_feed"
+            android:exported="false" />
+        <activity
+            android:name=".login_page"
+            android:exported="false" />
+        <activity
+            android:name=".switch_accounts_page"
+            android:exported="false" />
+        <activity
+            android:name=".signup_page"
+            android:exported="false" />
+        <activity
+            android:name=".own_story_page"
+            android:exported="false" />
+        <activity
+            android:name=".user_item_layout"
+            android:exported="false" />
+        <activity
+            android:name=".launch_page"
+            android:exported="false" />
+
+        <activity
+            android:name=".notifications_page"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="OPEN_NOTIFICATIONS" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".add_chats_page"
+            android:exported="false" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+
+        <service
+            android:name=".MyFirebaseMessagingService"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <activity
+            android:name=".splash_screen"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

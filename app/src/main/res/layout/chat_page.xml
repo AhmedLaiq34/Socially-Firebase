@@ -1,0 +1,200 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/chat_root_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@android:color/white">
+
+    <!-- Top Bar -->
+    <LinearLayout
+        android:id="@+id/chat_top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="12dp">
+
+        <ImageView
+            android:id="@+id/btn_back"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/brown_back_button"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="5dp" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/img_profile_picture"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="5dp" />
+
+        <TextView
+            android:id="@+id/txt_username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:textSize="20sp"
+            android:textColor="@android:color/black"
+            android:fontFamily="@font/instagram_sans"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:paddingVertical="8dp"
+            android:layout_marginTop="5dp" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <ImageView
+            android:id="@+id/call"
+            android:layout_width="26dp"
+            android:layout_height="26dp"
+            android:src="@drawable/brown_call_icon"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="5dp"
+            />
+
+
+        <ImageView
+            android:id="@+id/video_call"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/video_call_icon"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="5dp" />
+
+        <ImageView
+            android:id="@+id/btn_info"
+            android:layout_width="27dp"
+            android:layout_height="27dp"
+            android:src="@drawable/info"
+            android:layout_marginRight="12dp"
+            android:layout_marginTop="6dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/callBanner"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:layout_margin="8dp"
+        android:padding="12dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="@drawable/call_banner_ripple"
+        android:visibility="gone"
+        android:clickable="true"
+        android:focusable="true">
+
+        <ImageView
+            android:id="@+id/callBannerIcon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/call_circle_white"
+            android:layout_marginEnd="12dp"/>
+
+        <TextView
+            android:id="@+id/callBannerText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Incoming Voice Call..."
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            android:fontFamily="@font/instagram_sans"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/videoCallBanner"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:layout_margin="8dp"
+        android:padding="12dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:visibility="gone"
+        android:background="@drawable/call_banner_ripple"
+        android:clickable="true"
+        android:focusable="true">
+
+        <ImageView
+            android:id="@+id/videoCallBannerIcon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/video_call_circle_white"
+            android:layout_marginEnd="12dp"/>
+
+        <TextView
+            android:id="@+id/videoCallBannerText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Incoming Video Call..."
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            android:fontFamily="@font/instagram_sans"/>
+    </LinearLayout>
+
+    <!-- RecyclerView for messages -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view_messages"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingHorizontal="12dp"
+        android:paddingVertical="8dp"
+        android:clipToPadding="false"
+        android:scrollbars="vertical"
+        />
+
+    <!-- Message Input Bar -->
+    <LinearLayout
+        android:id="@+id/chat_message_bar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        android:background="@drawable/message_bar"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:paddingHorizontal="8dp">
+
+        <ImageView
+            android:id="@+id/btn_attach"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/circular_cam"
+            android:layout_marginRight="4dp" />
+
+        <EditText
+            android:id="@+id/input_message"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:hint="Message..."
+            android:background="@android:color/transparent"
+            android:textSize="16sp"
+            android:padding="8dp"
+            android:fontFamily="@font/instagram_sans"
+            android:inputType="textMultiLine"
+            android:maxLines="4" />
+
+        <ImageView
+            android:id="@+id/btn_send"
+            android:layout_width="40dp"
+            android:layout_height="30dp"
+            android:src="@drawable/chat_send"
+            android:layout_marginLeft="6dp" />
+    </LinearLayout>
+
+</LinearLayout>
+
+
+
+
+
+
+
+
+
+

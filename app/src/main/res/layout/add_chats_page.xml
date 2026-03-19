@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@android:color/white"
+    android:padding="10dp">
+
+<!-- Top bar -->
+<LinearLayout
+    android:id="@+id/top_bar_add_chat"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:paddingVertical="8dp"
+    android:paddingHorizontal="12dp">
+
+    <ImageView
+        android:id="@+id/back_button_add_chat"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:src="@drawable/brown_back_button"
+        android:contentDescription="Back" />
+
+    <TextView
+        android:id="@+id/title_text_add_chat"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:fontFamily="@font/instagram_sans"
+        android:paddingEnd="32dp"
+        android:text="Start a new chat"
+        android:textAlignment="center"
+        android:textColor="@color/brown"
+        android:textSize="22sp" />
+</LinearLayout>
+
+<!-- RecyclerView for listing all users -->
+<androidx.recyclerview.widget.RecyclerView
+    android:id="@+id/recyclerViewUsers"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="8dp"
+    android:scrollbars="vertical"
+    android:clipToPadding="false"
+    tools:listitem="@layout/user_item_layout"/>
+
+</LinearLayout>

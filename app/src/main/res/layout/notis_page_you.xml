@@ -1,0 +1,595 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/main_container"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/tabs_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tab_following_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Following"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/brown"
+            android:gravity="center"
+            android:padding="12dp" />
+
+        <TextView
+            android:id="@+id/tab_you_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="You"
+            android:textSize="18sp"
+            android:textColor="@color/brown"
+            android:fontFamily="@font/instagram_sans_bold"
+            android:gravity="center"
+            android:padding="12dp" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/underline_divider"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@android:color/darker_gray" />
+
+    <View
+        android:id="@+id/tab_indicator"
+        android:layout_width="205dp"
+        android:layout_height="3dp"
+        android:background="@color/brown"
+        android:layout_gravity="end"
+        android:layout_marginEnd="12dp"
+        android:layout_marginTop="-3dp" />
+
+    <TextView
+        android:id="@+id/follow_requests_title"
+        android:padding="12dp"
+        android:text="Follow Requests"
+        android:layout_width="match_parent"
+        android:textStyle="bold"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:textColor="@color/brown"
+        android:fontFamily="@font/instagram_sans"/>
+
+    <View
+        android:id="@+id/follow_requests_divider"
+        android:layout_width="match_parent"
+        android:background="#33000000"
+        android:layout_height="1dp" />
+
+    <ScrollView
+        android:id="@+id/notis_scrollview"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:id="@+id/notis_scroll_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/new_section_title"
+                android:text="New"
+                android:padding="12dp"
+                android:layout_width="match_parent"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/instagram_sans_bold"
+                android:layout_marginBottom="10dp"/>
+
+            <LinearLayout
+                android:id="@+id/new_item_1"
+                android:orientation="horizontal"
+                android:paddingHorizontal="12dp"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:id="@+id/new_item_1_pfp"
+                    android:src="@drawable/pfp1"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:scaleType="centerCrop" />
+
+                <TextView
+                    android:id="@+id/new_item_1_text"
+                    android:layout_marginStart="8dp"
+                    android:layout_height="wrap_content"
+                    android:layout_width="225dp"
+                    android:text="@string/notis_you_page_string1"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:id="@+id/new_item_1_image"
+                    android:src="@drawable/grid_pic9"
+                    android:layout_height="60dp"
+                    android:layout_width="60dp"
+                    android:scaleType="centerCrop"
+                    android:layout_marginStart="47dp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/today_section_title"
+                android:textSize="16sp"
+                android:layout_height="wrap_content"
+                android:text="Today"
+                android:padding="12dp"
+                android:textColor="@color/black"
+                android:layout_width="match_parent"
+                android:fontFamily="@font/instagram_sans_bold"
+                android:layout_marginBottom="10dp"/>
+
+            <LinearLayout
+                android:id="@+id/today_item_1"
+                android:layout_width="match_parent"
+                android:paddingHorizontal="12dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/today_item_1_pfp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/pfp2" />
+
+                <TextView
+                    android:id="@+id/today_item_1_text"
+                    android:layout_marginStart="8dp"
+                    android:textSize="14sp"
+                    android:layout_height="wrap_content"
+                    android:layout_width="225dp"
+                    android:text="@string/notis_you_page_string2" />
+
+                <ImageView
+                    android:id="@+id/today_item_1_image"
+                    android:src="@drawable/grid_pic8"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:scaleType="centerCrop"
+                    android:layout_marginStart="47dp"/>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/week_section_title"
+                android:padding="12dp"
+                android:text="This Week"
+                android:layout_width="match_parent"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/instagram_sans_bold"
+                android:layout_marginBottom="10dp"/>
+
+            <LinearLayout
+                android:id="@+id/week_item_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="8dp"
+                android:gravity="top"
+                android:layout_marginBottom="10dp">
+
+                <ImageView
+                    android:id="@+id/week_item_1_pfp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/pfp3"
+                    android:scaleType="centerCrop" />
+
+                <LinearLayout
+                    android:id="@+id/week_item_1_text_container"
+                    android:layout_width="220dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/week_item_1_text"
+                        android:layout_width="180dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/notis_you_page_string3"
+                        android:textSize="13sp"
+                        android:textColor="@color/black" />
+
+                    <LinearLayout
+                        android:id="@+id/week_item_1_reply_container"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/week_item_1_reply_icon"
+                            android:layout_width="15dp"
+                            android:layout_height="15dp"
+                            android:src="@drawable/reply_heart"
+                            android:layout_marginTop="4dp"/>
+
+                        <TextView
+                            android:id="@+id/week_item_1_reply_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Reply"
+                            android:textSize="10sp"
+                            android:textColor="#888888"
+                            android:layout_marginTop="4dp"
+                            android:layout_marginLeft="6dp"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/week_item_1_image"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:src="@drawable/grid_pic10"
+                    android:scaleType="centerCrop"
+                    android:layout_marginLeft="51dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:paddingHorizontal="12dp"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingVertical="8dp">
+
+                <ImageView
+                    android:layout_height="40dp"
+                    android:layout_width="40dp"
+                    android:src="@drawable/pfp4"
+                    android:scaleType="centerCrop" />
+
+                <TextView
+                    android:text="@string/notis_you_page_string4"
+                    android:layout_marginStart="8dp"
+                    android:textSize="14sp"
+                    android:layout_width="180dp"
+                    android:layout_height="wrap_content" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:text="Message"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/black"
+                    android:stateListAnimator="@null"
+                    android:backgroundTint="@color/white"
+                    app:cornerRadius="6dp"
+                    app:rippleColor="#22000000"
+                    app:strokeWidth="1dp"
+                    app:strokeColor="@android:color/darker_gray"
+                    android:fontFamily="@font/instagram_sans"
+                    android:layout_marginLeft="50dp"
+                    android:id="@+id/Message1"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/notif_row_pfp5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="8dp">
+
+                <ImageView
+                    android:id="@+id/notif_pfp5_image"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/pfp5" />
+
+                <TextView
+                    android:id="@+id/notif_pfp5_text"
+                    android:layout_width="180dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="@string/notis_you_page_string5"
+                    android:textSize="14sp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/Message2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="50dp"
+                    android:text="Message"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/black"
+                    android:stateListAnimator="@null"
+                    android:backgroundTint="@color/white"
+                    android:fontFamily="@font/instagram_sans"
+                    app:cornerRadius="6dp"
+                    app:rippleColor="#22000000"
+                    app:strokeWidth="1dp"
+                    app:strokeColor="@android:color/darker_gray" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/notif_row_pfp6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="8dp">
+
+                <ImageView
+                    android:id="@+id/notif_pfp6_image"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/pfp6" />
+
+                <TextView
+                    android:id="@+id/notif_pfp6_text"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="@string/notis_you_page_string6"
+                    android:textSize="14sp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/notif_pfp6_btn_follow"
+                    android:layout_width="102dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="30dp"
+                    android:text="Follow"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/white"
+                    android:stateListAnimator="@null"
+                    android:backgroundTint="@color/light_brown"
+                    android:fontFamily="@font/instagram_sans"
+                    app:cornerRadius="6dp"
+                    app:rippleColor="#22000000" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/notif_row_post3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="8dp">
+
+                <ImageView
+                    android:id="@+id/notif_post3_image"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/post3_pfp" />
+
+                <TextView
+                    android:id="@+id/notif_post3_text"
+                    android:layout_width="180dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="@string/notis_you_page_string7"
+                    android:textSize="14sp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/Message3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="50dp"
+                    android:text="Message"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/black"
+                    android:stateListAnimator="@null"
+                    android:backgroundTint="@color/white"
+                    android:fontFamily="@font/instagram_sans"
+                    app:cornerRadius="6dp"
+                    app:rippleColor="#22000000"
+                    app:strokeWidth="1dp"
+                    app:strokeColor="@android:color/darker_gray" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/notif_row_post1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="8dp">
+
+                <ImageView
+                    android:id="@+id/notif_post1_image"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/post1_pfp" />
+
+                <TextView
+                    android:id="@+id/notif_post1_text"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="@string/notis_you_page_string8"
+                    android:textSize="14sp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/notif_post1_btn_follow"
+                    android:layout_width="102dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="30dp"
+                    android:text="Follow"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/white"
+                    android:stateListAnimator="@null"
+                    android:backgroundTint="@color/light_brown"
+                    android:fontFamily="@font/instagram_sans"
+                    app:cornerRadius="6dp"
+                    app:rippleColor="#22000000" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/notif_row_grid13"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="8dp">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/notif_grid13_image"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/grid_pic13" />
+
+                <TextView
+                    android:id="@+id/notif_grid13_text"
+                    android:layout_width="180dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="@string/notis_you_page_string9"
+                    android:textSize="14sp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/Message4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="50dp"
+                    android:text="Message"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/black"
+                    android:stateListAnimator="@null"
+                    android:backgroundTint="@color/white"
+                    android:fontFamily="@font/instagram_sans"
+                    app:cornerRadius="6dp"
+                    app:rippleColor="#22000000"
+                    app:strokeWidth="1dp"
+                    app:strokeColor="@android:color/darker_gray" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/notif_row_grid16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="8dp">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/notif_grid16_image"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/grid_pic16" />
+
+                <TextView
+                    android:id="@+id/notif_grid16_text"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="@string/notis_you_page_string10"
+                    android:textSize="14sp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/notif_grid16_btn_follow"
+                    android:layout_width="102dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="30dp"
+                    android:text="Follow"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/white"
+                    android:stateListAnimator="@null"
+                    android:backgroundTint="@color/light_brown"
+                    android:fontFamily="@font/instagram_sans"
+                    app:cornerRadius="6dp"
+                    app:rippleColor="#22000000" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <FrameLayout
+        android:id="@+id/bottom_nav_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <View
+            android:id="@+id/bottom_nav_divider"
+            android:background="#33000000"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_gravity="top" />
+
+        <LinearLayout
+            android:id="@+id/bottom_nav_bar"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:elevation="4dp"
+            android:gravity="center"
+            android:layout_height="64dp"
+            android:background="@color/white">
+
+            <ImageView
+                android:id="@+id/bottom_nav_home"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:contentDescription="home"
+                android:src="@drawable/home_unhighlighted" />
+
+            <ImageView
+                android:id="@+id/bottom_nav_search"
+                android:contentDescription="search"
+                android:src="@drawable/search"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="30dp"
+                android:clickable="true"
+                android:focusable="true"/>
+
+            <ImageView
+                android:id="@+id/bottom_nav_create"
+                android:layout_width="0dp"
+                android:contentDescription="add"
+                android:layout_height="30dp"
+                android:src="@drawable/create"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:focusable="true"/>
+
+            <ImageView
+                android:id="@+id/bottom_nav_heart"
+                android:layout_width="0dp"
+                android:layout_height="25dp"
+                android:layout_weight="1"
+                android:src="@drawable/like_highlighted"
+                android:contentDescription="likes" />
+
+            <ImageView
+                android:id="@+id/bottom_nav_profile"
+                android:contentDescription="profile"
+                android:src="@drawable/pfp1"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="30dp" />
+        </LinearLayout>
+    </FrameLayout>
+</LinearLayout>

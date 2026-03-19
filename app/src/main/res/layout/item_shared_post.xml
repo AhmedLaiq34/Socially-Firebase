@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="wrap_content"
+    android:padding="8dp">
+
+    <!-- Header with profile pic + username -->
+    <LinearLayout
+        android:id="@+id/postItemContainer"
+        android:layout_marginBottom="16dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:background="@drawable/rounded_post_background_drawable"
+        android:clipToOutline="true"
+        android:elevation="2dp">
+
+        <LinearLayout
+            android:id="@+id/post1Header"
+            android:layout_height="48dp"
+            android:orientation="horizontal"
+            android:paddingHorizontal="12dp"
+            android:gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_marginTop="5dp">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/postProfileImage"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/placeholder_pfp"
+                />
+
+            <TextView
+                android:id="@+id/tvUsername"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:text="username placeholder"
+                android:textColor="@color/black"/>
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/vpPostImages"
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            android:scaleType="centerCrop"
+            android:clipToPadding="false"
+            android:clipChildren="false"
+            />
+
+
+        <TextView
+            android:id="@+id/postCaption"
+            android:layout_marginTop="8dp"
+            android:padding="12dp"
+            android:layout_width="match_parent"
+            android:text="caption placeholder"
+            android:textSize="14sp"
+            android:layout_height="wrap_content" />
+
+
+    </LinearLayout>
+
+</LinearLayout>

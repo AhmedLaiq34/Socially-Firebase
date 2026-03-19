@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rootLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FFFFFF">
+
+    <LinearLayout
+        android:id="@+id/topNavBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="12dp"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/btn_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cancel"
+            android:textColor="@color/brown"
+            android:textSize="16sp"
+            android:background="?android:attr/selectableItemBackground"
+            android:padding="8dp" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1" />
+
+        <LinearLayout
+            android:id="@+id/titleSection"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/jacob"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Recents"
+                android:gravity="center"
+                android:fontFamily="@font/instagram_sans_bold"
+                android:textColor="@color/brown"
+                android:textSize="18sp"
+                android:layout_centerInParent="true" />
+
+            <ImageView
+                android:id="@+id/dropdownArrow"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/down_arrow_all_chats_page"
+                android:layout_toEndOf="@id/jacob"
+                android:layout_centerVertical="true" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/btn_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Next"
+            android:textColor="@color/brown"
+            android:textSize="16sp"
+            android:padding="8dp"
+            android:fontFamily="@font/instagram_sans_bold"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/mainContentArea"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:id="@+id/featuredImageSection"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="#F5F5F5">
+
+            <ImageView
+                android:id="@+id/featured_image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/back_man"
+                android:contentDescription="Featured photo" />
+
+            <LinearLayout
+                android:id="@+id/selectionControlsOverlay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:orientation="horizontal"
+                android:paddingVertical="16dp"
+                android:paddingHorizontal="8dp"
+                android:gravity="end">
+
+                <ImageView
+                    android:id="@+id/btn_infinity"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="16dp"
+                    android:src="@drawable/infinity"
+                    android:background="@drawable/rounded_button_background"
+                    android:padding="8dp"
+                    android:contentDescription="Infinity" />
+
+                <ImageView
+                    android:id="@+id/btn_copy"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginEnd="16dp"
+                    android:src="@drawable/layout_icon"
+                    android:background="@drawable/rounded_button_background"
+                    android:padding="8dp"
+                    android:contentDescription="Copy" />
+
+                <FrameLayout
+                    android:id="@+id/btn_select_multiple"
+                    android:layout_width="wrap_content"
+                    android:layout_height="35dp"
+                    android:background="@drawable/rounded_button_background"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:layout_marginTop="5dp">
+
+                    <LinearLayout
+                        android:id="@+id/selectMultipleInnerLayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:paddingHorizontal="16dp">
+
+                        <ImageView
+                            android:id="@+id/selectMultipleIcon"
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:src="@drawable/select_multiple_icon"
+                            android:layout_marginEnd="8dp"
+                            android:contentDescription="Select multiple icon" />
+
+                        <TextView
+                            android:id="@+id/selectMultipleText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="SELECT MULTIPLE"
+                            android:textColor="#FFFFFF"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                </FrameLayout>
+
+            </LinearLayout>
+
+        </FrameLayout>
+
+        <ScrollView
+            android:id="@+id/photoGridScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <GridLayout
+                android:id="@+id/photo_grid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:columnCount="4"
+                android:padding="1dp">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="90dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="1dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/grid_pic9"
+                    android:background="?android:attr/selectableItemBackground" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="90dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="1dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/grid_pic5"
+                    android:background="?android:attr/selectableItemBackground" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="90dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="1dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/grid_pic7"
+                    android:background="?android:attr/selectableItemBackground" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="90dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="1dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/grid_pic13"
+                    android:background="?android:attr/selectableItemBackground" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="90dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="1dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/grid_pic14"
+                    android:background="?android:attr/selectableItemBackground" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="90dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="1dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/grid_pic16"
+                    android:background="?android:attr/selectableItemBackground" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="90dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="1dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/grid_pic6"
+                    android:background="?android:attr/selectableItemBackground" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="90dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="1dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/grid_pic8"
+                    android:background="?android:attr/selectableItemBackground" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="90dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="1dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/grid_pic11"
+                    android:background="?android:attr/selectableItemBackground" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="90dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="1dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/grid_pic15"
+                    android:background="?android:attr/selectableItemBackground" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="90dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="1dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/post_a"
+                    android:background="?android:attr/selectableItemBackground" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="90dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="1dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/post_b"
+                    android:background="?android:attr/selectableItemBackground" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="90dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="1dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/post_c"
+                    android:background="?android:attr/selectableItemBackground" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="90dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="1dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/post_d"
+                    android:background="?android:attr/selectableItemBackground" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="90dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="1dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/post_e"
+                    android:background="?android:attr/selectableItemBackground" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="90dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="1dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/post_f"
+                    android:background="?android:attr/selectableItemBackground" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="90dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="1dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/post_g"
+                    android:background="?android:attr/selectableItemBackground" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="90dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="1dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/post_h"
+                    android:background="?android:attr/selectableItemBackground" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="90dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="1dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/post_i"
+                    android:background="?android:attr/selectableItemBackground" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="90dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="1dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/post_j"
+                    android:background="?android:attr/selectableItemBackground" />
+
+            </GridLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/bottomTabBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#FFFFFF"
+        android:paddingVertical="12dp"
+        android:elevation="4dp">
+
+        <TextView
+            android:id="@+id/tab_library"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Library"
+            android:textColor="@color/brown"
+            android:fontFamily="@font/instagram_sans_bold"
+            android:textSize="14sp"
+            android:gravity="center"
+            android:padding="8dp" />
+
+        <TextView
+            android:id="@+id/tab_photo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Photo"
+            android:textColor="@color/brown"
+            android:textSize="14sp"
+            android:gravity="center"
+            android:padding="8dp"
+            android:fontFamily="@font/instagram_sans"/>
+
+        <TextView
+            android:id="@+id/tab_video"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Video"
+            android:textColor="@color/brown"
+            android:textSize="14sp"
+            android:gravity="center"
+            android:padding="8dp"
+            android:fontFamily="@font/instagram_sans"/>
+
+    </LinearLayout>
+
+</LinearLayout>

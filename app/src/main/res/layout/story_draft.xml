@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black"
+    android:id="@+id/main">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="800dp"
+        android:layout_margin="3dp"
+        android:background="@drawable/highlight_bg"
+        android:clipToOutline="true">
+
+        <ImageView
+            android:id="@+id/storyImage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/grid_pic16"/>
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:padding="12dp"
+        android:layout_alignParentTop="true">
+
+        <ImageView
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:src="@drawable/brown_x"
+            android:background="@drawable/rounded_button_bg"
+            android:padding="12dp"
+            android:layout_marginEnd="12dp"
+            android:id="@+id/close"/>
+
+        <View
+            android:layout_width="56dp"
+            android:layout_height="2dp"
+            />
+
+        <ImageView
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:src="@drawable/man_tick"
+            android:background="@drawable/rounded_button_bg"
+            android:padding="4dp"
+            android:layout_marginEnd="6dp" />
+        <ImageView
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:src="@drawable/aa"
+            android:background="@drawable/rounded_button_bg"
+            android:padding="4dp"
+            android:layout_marginEnd="6dp" />
+
+        <ImageView
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:src="@drawable/sticker"
+            android:background="@drawable/rounded_button_bg"
+            android:padding="4dp"
+            android:layout_marginEnd="6dp" />
+
+        <ImageView
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:src="@drawable/music"
+            android:background="@drawable/rounded_button_bg"
+            android:padding="4dp"
+            android:layout_marginEnd="6dp" />
+
+        <ImageView
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:src="@drawable/sparkles"
+            android:background="@drawable/rounded_button_bg"
+            android:padding="4dp"
+            android:layout_marginEnd="6dp" />
+
+        <ImageView
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:src="@drawable/more_story"
+            android:background="@drawable/rounded_button_bg"
+            android:padding="6dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/bottomBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="start"
+        android:layout_alignParentBottom="true"
+        android:paddingVertical="16dp">
+
+        <ImageView
+            android:layout_width="210dp"
+            android:layout_height="42dp"
+            android:src="@drawable/your_stories"
+            android:layout_marginLeft="-10dp"
+            android:id="@+id/your_stories">
+        </ImageView>
+
+        <ImageView
+            android:layout_width="210dp"
+            android:layout_height="42dp"
+            android:src="@drawable/close_friends"
+            android:layout_marginLeft="-35dp"
+            android:id="@+id/close_friends">
+        </ImageView>
+
+        <ImageView
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:src="@drawable/arrow_round"
+            android:layout_marginLeft="-15dp"
+            android:id="@+id/next"/>
+    </LinearLayout>
+
+</RelativeLayout>

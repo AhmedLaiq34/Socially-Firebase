@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:padding="10dp">
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/default_profile"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/placeholder_pfp"
+            android:scaleType="centerCrop"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="10dp">
+
+            <TextView
+                android:id="@+id/tvUsername"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="username"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"/>
+
+            <TextView
+                android:id="@+id/tvDisplayName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Display Name"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="16sp"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:background="@android:color/darker_gray"
+        android:layout_marginHorizontal="22dp"
+        />
+
+
+
+</LinearLayout>

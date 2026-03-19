@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval">
+
+    <!-- This creates the rainbow sweep around the circle -->
+    <gradient
+        android:type="sweep"
+        android:useLevel="false"
+        android:startColor="#DD2A7B"
+        android:centerColor="#515BD4"
+        android:endColor="#DD2A7B" />
+</shape>

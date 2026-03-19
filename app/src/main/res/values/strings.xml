@@ -1,0 +1,44 @@
+<resources>
+    <string name="app_name">Socially</string>
+    <string name="socially_title_signup_page">Socially</string>
+    <string name="create_an_account_and_sign_up">Create An Account and Sign Up</string>
+    <string name="create_an_account">Create an Account</string>
+    <string name="your_name_signup_page">Your Name</string>
+    <string name="name_hint_signup_page">Tejas</string>
+    <string name="your_last_name_signup_page">Your Last Name</string>
+    <string name="last_name_hint_signup_page">Patil</string>
+    <string name="date_of_birth_signup_page">Date of Birth</string>
+    <string name="dd_mm_yyyy_hint_signup_page">02 - 09 - 2003</string>
+    <string name="e_mail_signup_page">E-mail</string>
+    <string name="example_email_com_hint_signup_page">Enter E-mail</string>
+    <string name="password_signup_page">Password</string>
+    <string name="password_hint_signup_page">********</string>
+    <string name="username_hint_signup_page">tejpatil064</string>
+    <string name="username_signup_page">Username</string>
+    <string name="log_in_button_text">Log in</string>
+    <string name="notis_following_page_string1"><b>kiero_d</b>, <b>zackjoh</b> and <b>craig_love</b> liked <b>joshua_l</b> photo.</string>
+    <string name="notis_following_page_string2"><b>kiero_d</b> started following <b>craig_love</b>. <b>@craig_love</b> is now following you. <font color="#A9A9A9"> 3h</font></string>
+    <string name="notis_following_page_string3"><b>craig_love</b> liked 8 posts.</string>
+    <string name="notis_following_page_string4"><b>maxjacobson</b> and <b>zackjohn</b> liked <b>mis_potter</b>’s post</string>
+    <string name="notis_following_page_string5"><b>maxjacobson</b> and <b>craig_love</b> liked <b>martini_rond</b>’s post.</string>
+    <string name="notis_following_page_string6"><b>karennne</b> liked <b>martini_rond</b>’s comment: <font color="#1565C0">@martini_rond</font> Nice!</string>
+    <string name="notis_following_page_string7"><b>maxjacobson</b> liked 3 posts.</string>
+    <string name="notis_following_page_string8"><b>karennne</b> liked 3 posts.</string>
+    <string name="notis_you_page_string1"><b>karenne</b> liked your photo.  <font color="#A9A9A9">1h</font></string>
+    <string name="notis_you_page_string2"><b>kiero_d</b>, <b>zackjohn</b> and 26 others liked your photo.  <font color="#A9A9A9">3h</font></string>
+    <string name="notis_you_page_string3"><b>craig_love</b> mentioned you in a comment: <font color="#1565C0"> @jacob_w</font> exactly.. 💫<font color="#A9A9A9">2d</font></string>
+    <string name="notis_you_page_string4"><b>martini_rond</b> started following you. <font color="#A9A9A9">3d</font></string>
+    <string name="notis_you_page_string5"><b>maxjacobson</b> started following you. <font color="#A9A9A9">3d</font></string>
+    <string name="notis_you_page_string6"><b>mis_potter</b> started following you. <font color="#A9A9A9">3d</font></string>
+    <string name="notis_you_page_string7"><b>jake_peralta</b> started following you. <font color="#A9A9A9">3d</font></string>
+    <string name="notis_you_page_string8"><b>mkbhd</b> started following you. <font color="#A9A9A9">3d</font></string>
+    <string name="notis_you_page_string9"><b>diego_w</b> started following you. <font color="#A9A9A9">3d</font></string>
+    <string name="notis_you_page_string10"><b>beth_h</b> started following you. <font color="#A9A9A9">3d</font></string>
+    <string name="profile_page_string1">Digital goodies designer <font color="#1565C0">@pixsellz</font>\nEverything is designed.</string>
+    <string name="highlight_page_string1"><b>Highlight</b> December 3, 2023</string>
+    <string name="highlight_page_string2"><b>Artist ·</b> Song Title  ›</string>
+    <string name="edit_profile_page_string1">Digital goodies designer <font color="#964242"> @pixellz</font> Everything is designed</string>
+    <string name="story_page_string1">craig_love <font color="#A9A9A9"> 4h</font></string>
+    <string name="celeb_page_string1"><b>kyan.co</b></string>
+    <string name="celeb_page_string2">Followed by <b>your friend</b>, <b>another friend</b> and\n<b>297 others</b></string>
+</resources>

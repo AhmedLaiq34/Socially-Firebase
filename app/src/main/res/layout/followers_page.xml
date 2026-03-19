@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:id="@+id/main"
+    android:fitsSystemWindows="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.33">
+
+            <ImageView
+                android:id="@+id/back_button"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/brown_back_button"
+                android:layout_centerInParent="true"
+                android:translationX="-30dp" />
+
+        </RelativeLayout>
+
+        <!-- Top Title -->
+        <TextView
+            android:id="@+id/followers_title"
+            android:layout_width="0dp"
+            android:layout_weight="0.33"
+            android:layout_height="wrap_content"
+            android:text="Followers"
+            android:textSize="23sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:padding="16dp"
+            android:fontFamily="@font/instagram_sans_headline"
+            android:textColor="@color/brown"
+            />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.33">
+
+        </View>
+
+    </LinearLayout>
+
+
+
+    <!-- Divider -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray" />
+
+    <!-- RecyclerView for followers -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/Followers"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="8dp"
+        android:clipToPadding="false"
+        android:scrollbars="vertical"
+        tools:listitem="@layout/followers_item"/>
+
+    <!-- Bottom Divider -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray" />
+
+
+</LinearLayout>

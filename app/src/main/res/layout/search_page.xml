@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:background="@android:color/white"
+    android:id="@+id/main"
+    android:fitsSystemWindows="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="10dp"
+        android:layout_marginTop="20dp">
+
+        <EditText
+            android:layout_width="300dp"
+            android:layout_height="40dp"
+            android:id="@+id/search_bar"
+            android:hint="Search Socially"
+            android:background="@drawable/search_bar_rectangle"
+            android:drawableStart="@drawable/search"
+            android:padding="10dp"
+            android:drawablePadding="12dp"
+            android:textColor="@color/black"
+            android:drawableEnd="@drawable/cancel"
+            android:textSize="18sp"
+            >
+
+        </EditText>
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:text="Clear"
+            android:textColor="@color/brown"
+            android:textSize="18sp"
+            android:id="@+id/tvClear"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        android:paddingVertical="8dp"
+        android:background="@android:color/white">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="All"
+            android:textColor="@color/brown"
+            android:textSize="15sp"
+            android:fontFamily="@font/instagram_sans_bold"
+            android:id="@+id/all_filter"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Followers"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="15sp"
+            android:fontFamily="@font/instagram_sans_bold"
+            android:id="@+id/follower_filter"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Following"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="15sp"
+            android:fontFamily="@font/instagram_sans_bold"
+            android:id="@+id/following_filter"/>
+
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#DDDDDD"/>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvSearchResults"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="8dp"
+        tools:listitem="@layout/item_user_search"/>
+</LinearLayout>

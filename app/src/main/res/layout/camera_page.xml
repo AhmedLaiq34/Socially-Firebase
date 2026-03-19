@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mainCameraLayout"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="@android:color/black">
+
+    <FrameLayout
+        android:id="@+id/featuredStoryContainer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@drawable/highlight_bg_2"
+        android:clipToOutline="true"
+        android:padding="3dp">
+
+        <ImageView
+            android:id="@+id/storyImage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/grid_pic16" />
+
+        <LinearLayout
+            android:id="@+id/topBarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="start"
+            android:padding="12dp"
+            android:layout_gravity="top">
+
+            <ImageView
+                android:id="@+id/settingsWheel"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/settings"
+                android:padding="4dp"/>
+
+            <View
+                android:layout_width="300dp"
+                android:layout_height="1dp"/>
+
+            <ImageView
+                android:id="@+id/rightArrow"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/right_arrow"
+                android:padding="4dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/captureControlsLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:paddingTop="16dp"
+            android:paddingBottom="24dp">
+
+            <ImageView
+                android:id="@+id/galleryButton"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:padding="6dp"
+                android:layout_marginEnd="12dp"
+                android:src="@drawable/photo_icon" />
+
+            <ImageView
+                android:id="@+id/effectsButton"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:padding="6dp"
+                android:src="@drawable/lightning" />
+
+            <ImageView
+                android:id="@+id/captureButton"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginHorizontal="14dp"
+                android:src="@drawable/clicker_camera" />
+
+            <ImageView
+                android:id="@+id/switchCameraButton"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:padding="6dp"
+                android:src="@drawable/cam_change" />
+
+            <ImageView
+                android:id="@+id/smileyButton"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:padding="6dp"
+                android:layout_marginStart="12dp"
+                android:src="@drawable/smiley" />
+        </LinearLayout>
+    </FrameLayout>
+
+    <RelativeLayout
+        android:id="@+id/modeSelectorContainer"
+        android:layout_width="500dp"
+        android:layout_height="80dp"
+        android:background="@android:color/black"
+        android:layout_marginTop="20dp">
+
+        <LinearLayout
+            android:id="@+id/modeSelectorLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginLeft="-10dp">
+
+            <TextView
+                android:id="@+id/modeType"
+                android:text="TYPE"
+                android:textSize="14sp"
+                android:textColor="@color/light_brown"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="8dp"
+                android:paddingHorizontal="3dp"/>
+
+            <TextView
+                android:id="@+id/modeLive"
+                android:text="LIVE"
+                android:textColor="@color/light_brown"
+                android:textSize="14sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="8dp"
+                android:paddingHorizontal="3dp"/>
+
+            <TextView
+                android:id="@+id/modeNormal"
+                android:text="NORMAL"
+                android:textStyle="bold"
+                android:textColor="@color/brown"
+                android:textSize="14sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="8dp"
+                android:paddingHorizontal="3dp"/>
+
+            <TextView
+                android:id="@+id/modeBoomerang"
+                android:text="BOOMERANG"
+                android:textSize="14sp"
+                android:textColor="@color/light_brown"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="8dp"
+                android:paddingHorizontal="3dp"/>
+
+            <TextView
+                android:id="@+id/modeSuper"
+                android:text="SUPER"
+                android:textSize="14sp"
+                android:textColor="@color/light_brown"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="8dp"
+                android:paddingHorizontal="3dp"/>
+        </LinearLayout>
+
+    </RelativeLayout>
+</LinearLayout>

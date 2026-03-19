@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white">
+
+    <!-- Top Search Bar -->
+    <LinearLayout
+        android:id="@+id/topRowLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="8dp"
+        android:gravity="center_vertical"
+        android:layout_alignParentTop="true">
+
+        <LinearLayout
+            android:id="@+id/searchBarLayout"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="12dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/rounded_edittext">
+
+            <ImageView
+                android:id="@+id/searchIcon"
+                android:layout_width="17dp"
+                android:layout_height="17dp"
+                android:src="@drawable/search"
+                android:contentDescription="Search"/>
+
+            <TextView
+                android:id="@+id/searchText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Search"
+                android:textSize="16sp"
+                android:layout_marginStart="8dp"
+                android:textColor="@color/brown"
+                android:fontFamily="@font/instagram_sans"/>
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/scanIcon"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:src="@drawable/scan"
+            android:contentDescription="Scan"/>
+    </LinearLayout>
+
+    <!-- Category Pills -->
+    <HorizontalScrollView
+        android:id="@+id/categoryScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/topRowLayout"
+        android:scrollbars="none"
+        android:paddingVertical="8dp">
+
+        <LinearLayout
+            android:id="@+id/categoryRowLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingHorizontal="12dp"
+            android:gravity="center_vertical">
+
+            <LinearLayout
+                android:id="@+id/shopCategory"
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:paddingHorizontal="12dp"
+                android:background="@drawable/rectangles_fy_page"
+                android:layout_marginEnd="8dp"
+                android:minWidth="60dp">
+
+                <ImageView
+                    android:id="@+id/shopIcon"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:src="@drawable/bag"
+                    android:contentDescription="Shop"
+                    android:layout_marginEnd="4dp"/>
+
+                <TextView
+                    android:id="@+id/shopText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Shop"
+                    android:textSize="14sp"
+                    android:textColor="@color/brown"
+                    android:fontFamily="@font/instagram_sans"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/styleCategory"
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingHorizontal="12dp"
+                android:background="@drawable/rectangles_fy_page"
+                android:layout_marginEnd="8dp"
+                android:minWidth="60dp">
+
+                <TextView
+                    android:id="@+id/styleText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Style"
+                    android:textSize="14sp"
+                    android:textColor="@color/brown"
+                    android:fontFamily="@font/instagram_sans"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/sportsCategory"
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingHorizontal="12dp"
+                android:background="@drawable/rectangles_fy_page"
+                android:layout_marginEnd="8dp"
+                android:minWidth="60dp">
+
+                <TextView
+                    android:id="@+id/sportsText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sports"
+                    android:textSize="14sp"
+                    android:textColor="@color/brown"
+                    android:fontFamily="@font/instagram_sans"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/autoCategory"
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingHorizontal="12dp"
+                android:background="@drawable/rectangles_fy_page"
+                android:layout_marginEnd="8dp"
+                android:minWidth="60dp">
+
+                <TextView
+                    android:id="@+id/autoText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Auto"
+                    android:textSize="14sp"
+                    android:textColor="@color/brown"
+                    android:fontFamily="@font/instagram_sans"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/musicCategory"
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingHorizontal="12dp"
+                android:background="@drawable/rectangles_fy_page"
+                android:minWidth="60dp">
+
+                <TextView
+                    android:id="@+id/musicText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Music"
+                    android:textSize="14sp"
+                    android:textColor="@color/brown"
+                    android:fontFamily="@font/instagram_sans"/>
+            </LinearLayout>
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <!-- Divider -->
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/brown"
+        android:layout_below="@id/categoryScrollView"/>
+
+    <!-- Posts RecyclerView -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewForYou"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_below="@id/divider"
+        android:layout_above="@id/bottomNavContainer"
+        android:clipToPadding="false"
+        android:paddingBottom="8dp"
+        tools:listitem="@layout/profile_post_item"/>
+
+    <!-- Bottom Navigation -->
+    <FrameLayout
+        android:id="@+id/bottomNavContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+
+        <View
+            android:id="@+id/bottomNavDivider"
+            android:background="#33000000"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_gravity="top"/>
+
+        <LinearLayout
+            android:id="@+id/bottomNavLayout"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:elevation="4dp"
+            android:gravity="center"
+            android:paddingHorizontal="16dp"
+            android:background="@color/white">
+
+            <ImageView
+                android:id="@+id/bottomNavHome"
+                android:layout_width="0dp"
+                android:layout_height="24dp"
+                android:layout_weight="1"
+                android:src="@drawable/home_unfilled"
+                android:contentDescription="home"
+                android:scaleType="fitCenter"
+                android:clickable="true"
+                android:focusable="true"/>
+
+            <ImageView
+                android:id="@+id/bottomNavSearch"
+                android:layout_width="0dp"
+                android:layout_height="26dp"
+                android:layout_weight="1"
+                android:src="@drawable/search_highlighted"
+                android:scaleType="fitCenter"
+                android:contentDescription="search_highlighted"/>
+
+            <ImageView
+                android:id="@+id/bottomNavCreate"
+                android:layout_width="0dp"
+                android:layout_height="24dp"
+                android:layout_weight="1"
+                android:src="@drawable/upload_plus_bottom_nav"
+                android:scaleType="fitCenter"
+                android:contentDescription="add"
+                android:clickable="true"
+                android:focusable="true"/>
+
+            <ImageView
+                android:id="@+id/bottomNavLikes"
+                android:layout_width="0dp"
+                android:layout_height="24dp"
+                android:layout_weight="1"
+                android:src="@drawable/heart_unfilled"
+                android:scaleType="fitCenter"
+                android:contentDescription="likes"/>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/bottomNavProfile"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_gravity="center"
+                android:contentDescription="profile"
+                android:src="@drawable/placeholder_pfp"/>
+        </LinearLayout>
+    </FrameLayout>
+</RelativeLayout>

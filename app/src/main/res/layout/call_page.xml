@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    tools:context=".call_page">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_alignParentTop="true"
+        android:background="@color/brown"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="12dp"
+        >
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/signup_back"
+            android:layout_centerVertical="true"
+            >
+
+        </ImageView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Voice Call"
+            android:fontFamily="@font/instagram_sans_headline"
+            android:textSize="28sp"
+            android:textColor="@color/white"
+            android:layout_centerInParent="true"
+            android:layout_marginBottom="2dp"
+            android:textStyle="bold"
+            >
+        </TextView>
+
+
+    </RelativeLayout>
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true">
+
+        <!-- Background circle -->
+        <ImageView
+            android:id="@+id/call_page_circle"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:src="@drawable/call_page_circle"
+            android:layout_gravity="center" />
+
+        <!-- Profile picture, perfectly centered inside -->
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/pfp"
+            android:layout_width="340dp"
+            android:layout_height="340dp"
+            android:src="@drawable/placeholder_pfp"
+            android:layout_gravity="center" />
+    </FrameLayout>
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Placeholder Name"
+        android:id="@+id/placeholder_name"
+        android:textColor="@color/brown"
+        android:textSize="24sp"
+        android:fontFamily="@font/instagram_sans_headline"
+        android:layout_below="@id/pfp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:translationY="-100dp"
+        android:textStyle="bold"
+       >
+
+    </TextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Status"
+        android:id="@+id/status_text"
+        android:textColor="@color/brown"
+        android:textSize="16sp"
+        android:fontFamily="@font/instagram_sans_headline"
+        android:layout_below="@id/placeholder_name"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:translationY="-100dp"
+        >
+
+    </TextView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:src="@drawable/call_speaker_white"
+            android:layout_weight="1"
+            android:id="@+id/speaker_btn"
+            >
+
+        </ImageView>
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/call_end_white"
+            android:layout_weight="1"
+            android:id="@+id/end_call_btn">
+
+        </ImageView>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:src="@drawable/mic_white"
+            android:layout_weight="1"
+            android:id="@+id/mute_btn">
+
+        </ImageView>
+    </LinearLayout>
+
+</RelativeLayout>

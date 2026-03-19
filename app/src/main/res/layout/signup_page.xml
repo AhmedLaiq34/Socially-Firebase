@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/signupScrollView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".signup_page"
+    android:orientation="vertical"
+    android:background="@drawable/signup_page_background_gradient"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:id="@+id/signupMainContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginRight="26dp"
+        android:layout_marginLeft="26dp"
+        android:padding="20dp">
+
+        <View
+            android:id="@+id/signupTopSpacer"
+            android:layout_width="match_parent"
+            android:layout_height="30dp" />
+
+        <RelativeLayout
+            android:id="@+id/signupHeaderLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/signupBackBtn"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/signup_back"
+                android:background="@null"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
+                android:padding="0dp"
+                android:clickable="true"
+                android:focusable="true" />
+
+            <TextView
+                android:id="@+id/signup_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="-10dp"
+                android:paddingBottom="14dp"
+                android:text="@string/socially_title_signup_page"
+                android:textSize="50sp"
+                android:textColor="@color/white"
+                android:fontFamily="@font/instagram_sans_headline"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/signupSubtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/signup_title"
+                android:text="@string/create_an_account_and_sign_up"
+                android:fontFamily="@font/instagram_sans"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/signupProfileContainer"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="15dp">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/signupProfileImage"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:src="@drawable/signup_page_circle"
+                />
+
+            <ImageView
+                android:id="@+id/signupProfileCameraIcon"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/signup_page_cam"
+                android:clickable="true"
+                android:focusable="true" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/usernameLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:text="Username"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/instagram_sans_bold"
+            android:paddingBottom="5dp"
+            android:textSize="17sp" />
+
+        <EditText
+            android:id="@+id/Username_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="17sp"
+            android:fontFamily="@font/instagram_sans_light"
+            android:hint="Enter username"
+            android:textColor="@color/white"
+            android:inputType="text"
+            android:backgroundTint="@color/white"
+            android:textColorHint="@color/white" />
+
+        <TextView
+            android:id="@+id/firstNameLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="5dp"
+            android:layout_marginTop="12dp"
+            android:textSize="17sp"
+            android:textColor="@color/white"
+            android:text="First Name"
+            android:fontFamily="@font/instagram_sans_bold" />
+
+        <EditText
+            android:id="@+id/FirstName_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/white"
+            android:inputType="textPersonName"
+            android:textColor="@color/white"
+            android:hint="Enter first name"
+            android:fontFamily="@font/instagram_sans_light"
+            android:textColorHint="@color/white"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/lastNameLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Last Name"
+            android:textColor="@color/white"
+            android:textSize="17sp"
+            android:layout_marginTop="12dp"
+            android:paddingBottom="5dp"
+            android:fontFamily="@font/instagram_sans_bold" />
+
+        <EditText
+            android:id="@+id/LastName_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/white"
+            android:textColor="@color/white"
+            android:hint="Enter last name"
+            android:inputType="textPersonName"
+            android:textSize="17sp"
+            android:fontFamily="@font/instagram_sans_light"
+            android:backgroundTint="@color/white" />
+
+        <TextView
+            android:id="@+id/dobLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/instagram_sans_bold"
+            android:text="@string/date_of_birth_signup_page"
+            android:paddingBottom="5dp"
+            android:layout_marginTop="12dp"
+            android:textColor="@color/white"
+            android:textSize="17sp" />
+
+        <EditText
+            android:id="@+id/Dob_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/instagram_sans_light"
+            android:textColor="@color/white"
+            android:hint="DD/MM/YYYY"
+            android:textSize="17sp"
+            android:textColorHint="@color/white"
+            android:backgroundTint="@color/white" />
+
+        <TextView
+            android:id="@+id/emailLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="5dp"
+            android:textColor="@color/white"
+            android:text="@string/e_mail_signup_page"
+            android:layout_marginTop="12dp"
+            android:textSize="17sp"
+            android:fontFamily="@font/instagram_sans_bold" />
+
+        <EditText
+            android:id="@+id/Email_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="17sp"
+            android:inputType="textEmailAddress"
+            android:hint="Enter e-mail address"
+            android:fontFamily="@font/instagram_sans_light"
+            android:backgroundTint="@color/white" />
+
+        <TextView
+            android:id="@+id/passwordLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/instagram_sans_bold"
+            android:textSize="17sp"
+            android:paddingBottom="5dp"
+            android:text="Password"
+            android:textColor="@color/white"
+            android:layout_marginTop="12dp" />
+
+        <EditText
+            android:id="@+id/Password_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="17sp"
+            android:drawableEnd="@drawable/pw_eye"
+            android:hint="Enter password"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/white"
+            android:textColorHint="@color/white"
+            android:fontFamily="@font/instagram_sans_light"
+            android:paddingEnd="20dp"
+            android:inputType="textPassword"
+            android:clickable="true" />
+
+        <TextView
+            android:id="@+id/phoneLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="5dp"
+            android:layout_marginTop="12dp"
+            android:textSize="17sp"
+            android:textColor="@color/white"
+            android:text="Phone Number"
+            android:fontFamily="@font/instagram_sans_bold" />
+
+        <EditText
+            android:id="@+id/Phone_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="phone"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:hint="XXXXXXXXXXXX"
+            android:fontFamily="@font/instagram_sans_light"
+            android:textSize="17sp"
+            android:backgroundTint="@color/white" />
+
+        <TextView
+            android:id="@+id/bioLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="5dp"
+            android:layout_marginTop="12dp"
+            android:textSize="17sp"
+            android:textColor="@color/white"
+            android:text="Bio"
+            android:fontFamily="@font/instagram_sans_bold" />
+
+        <EditText
+            android:id="@+id/Bio_input"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:inputType="textMultiLine"
+            android:gravity="top|start"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:hint="Tell the world about yourself"
+            android:fontFamily="@font/instagram_sans_light"
+            android:textSize="17sp"
+            android:backgroundTint="@color/white" />
+
+        <TextView
+            android:id="@+id/websiteLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="5dp"
+            android:layout_marginTop="12dp"
+            android:textSize="17sp"
+            android:textColor="@color/white"
+            android:text="Website Link"
+            android:fontFamily="@font/instagram_sans_bold" />
+
+        <EditText
+            android:id="@+id/Website_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textUri"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:hint="Enter website link here"
+            android:fontFamily="@font/instagram_sans_light"
+            android:textSize="17sp"
+            android:backgroundTint="@color/white" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/createAccountButton"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:text="Create an Account"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="@color/light_brown"
+            app:cornerRadius="6dp"
+            app:rippleColor="#22000000"
+            android:fontFamily="@font/instagram_sans"
+            app:strokeColor="@android:color/darker_gray"
+            app:strokeWidth="1dp" />
+
+    </LinearLayout>
+</ScrollView>

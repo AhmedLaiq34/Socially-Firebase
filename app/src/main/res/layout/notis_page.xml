@@ -1,0 +1,633 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@android:color/white">
+
+    <LinearLayout
+        android:id="@+id/top_tabs_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/tab_following_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Following"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/brown"
+            android:gravity="center"
+            android:padding="12dp" />
+
+        <TextView
+            android:id="@+id/tab_you_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="You"
+            android:textSize="18sp"
+            android:textColor="@color/brown"
+            android:fontFamily="@font/instagram_sans_bold"
+            android:gravity="center"
+            android:padding="12dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/divider_indicator_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <View
+            android:id="@+id/top_divider"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@android:color/darker_gray" />
+
+        <View
+            android:id="@+id/indicator_bar"
+            android:layout_width="205dp"
+            android:layout_height="3dp"
+            android:background="@color/brown"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="-3dp"/>
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/notifications_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:id="@+id/notifications_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/noti_item_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <ImageView
+                    android:id="@+id/noti1_profile_pic"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/pfp4"
+                    android:layout_marginRight="10dp" />
+
+                <LinearLayout
+                    android:id="@+id/noti1_content"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/noti1_header"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/noti1_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/notis_following_page_string8"
+                            android:textSize="14sp"
+                            android:textColor="@android:color/black"
+                            android:fontFamily="@font/instagram_sans"/>
+
+                        <TextView
+                            android:id="@+id/noti1_time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="3h"
+                            android:textSize="14sp"
+                            android:textColor="@android:color/darker_gray"
+                            android:layout_marginStart="5dp"
+                            android:fontFamily="@font/instagram_sans"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/noti1_thumbs"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="5dp">
+
+                        <ImageView
+                            android:id="@+id/noti1_thumb1"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:src="@drawable/grid_pic4"
+                            android:layout_marginRight="5dp" />
+
+                        <ImageView
+                            android:id="@+id/noti1_thumb2"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:src="@drawable/grid_pic6"
+                            android:layout_marginRight="5dp" />
+
+                        <ImageView
+                            android:id="@+id/noti1_thumb3"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:src="@drawable/grid_pic5" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/noti_item_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <ImageView
+                    android:id="@+id/noti2_profile_pic"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/two_ppl"
+                    android:layout_marginRight="10dp" />
+
+                <LinearLayout
+                    android:id="@+id/noti2_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/noti2_text"
+                        android:layout_width="225dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/notis_following_page_string1"
+                        android:textSize="14sp"
+                        android:textColor="@android:color/black"
+                        android:fontFamily="@font/instagram_sans"/>
+
+                    <TextView
+                        android:id="@+id/noti2_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="3h"
+                        android:textSize="14sp"
+                        android:textColor="@android:color/darker_gray"
+                        android:fontFamily="@font/instagram_sans"
+                        android:layout_marginTop="18dp"
+                        android:layout_marginLeft="-130dp"/>
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/noti2_preview"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/grid_pic8"
+                    android:layout_marginLeft="47dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/noti_item_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <ImageView
+                    android:id="@+id/noti3_profile_pic"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/pfp2"
+                    android:layout_marginRight="10dp" />
+
+                <TextView
+                    android:id="@+id/noti3_text"
+                    android:layout_width="225dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/instagram_sans"
+                    android:text="@string/notis_following_page_string2"
+                    android:textColor="@android:color/black"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/noti_item_4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/noti4_profile_pic"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/chat5"
+                    android:layout_marginRight="10dp" />
+
+                <LinearLayout
+                    android:id="@+id/noti4_content"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/noti4_header"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/noti4_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/notis_following_page_string3"
+                            android:textSize="14sp"
+                            android:textColor="@android:color/black"
+                            android:fontFamily="@font/instagram_sans"/>
+
+                        <TextView
+                            android:id="@+id/noti4_time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="3h"
+                            android:textSize="14sp"
+                            android:textColor="@android:color/darker_gray"
+                            android:layout_marginLeft="5dp"
+                            android:fontFamily="@font/instagram_sans"/>
+                    </LinearLayout>
+
+                    <GridLayout
+                        android:id="@+id/noti4_grid"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:columnCount="6"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="5dp">
+
+                        <ImageView
+                            android:id="@+id/noti4_thumb1"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:src="@drawable/grid_pic5"
+                            android:layout_margin="2dp"/>
+
+                        <ImageView
+                            android:id="@+id/noti4_thumb2"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:src="@drawable/grid_pic8"
+                            android:layout_margin="2dp"/>
+
+                        <ImageView
+                            android:id="@+id/noti4_thumb3"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:src="@drawable/grid_pic9"
+                            android:layout_margin="2dp"/>
+
+                        <ImageView
+                            android:id="@+id/noti4_thumb4"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:src="@drawable/grid_pic10"
+                            android:layout_margin="2dp"/>
+
+                        <ImageView
+                            android:id="@+id/noti4_thumb5"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:src="@drawable/grid_pic17"
+                            android:layout_margin="2dp"/>
+
+                        <ImageView
+                            android:id="@+id/noti4_thumb6"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:src="@drawable/grid_pic11"
+                            android:layout_margin="2dp"/>
+
+                        <ImageView
+                            android:id="@+id/noti4_thumb7"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:src="@drawable/grid_pic13"
+                            android:layout_margin="2dp"/>
+
+                        <ImageView
+                            android:id="@+id/noti4_thumb8"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:src="@drawable/grid_pic16"
+                            android:layout_margin="2dp"/>
+
+                    </GridLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/noti_item_5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/noti5_profile_pic"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/two_ppl"
+                    android:layout_marginRight="10dp" />
+
+                <LinearLayout
+                    android:id="@+id/noti5_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/noti5_text"
+                        android:layout_width="225dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/notis_following_page_string4"
+                        android:textSize="14sp"
+                        android:textColor="@android:color/black"
+                        android:fontFamily="@font/instagram_sans"/>
+
+                    <TextView
+                        android:id="@+id/noti5_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="3h"
+                        android:textSize="14sp"
+                        android:textColor="@android:color/darker_gray"
+                        android:fontFamily="@font/instagram_sans"
+                        android:layout_marginTop="18dp"
+                        android:layout_marginLeft="-115dp"/>
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/noti5_preview"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/grid_pic14"
+                    android:layout_marginLeft="47dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/noti_item_6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <ImageView
+                    android:id="@+id/noti6_profile_pic"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/two_ppl"
+                    android:layout_marginRight="10dp" />
+
+                <LinearLayout
+                    android:id="@+id/noti6_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/noti6_text"
+                        android:layout_width="225dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/notis_following_page_string5"
+                        android:textSize="14sp"
+                        android:textColor="@android:color/black"
+                        android:fontFamily="@font/instagram_sans"/>
+
+                    <TextView
+                        android:id="@+id/noti6_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="3h"
+                        android:textSize="14sp"
+                        android:textColor="@android:color/darker_gray"
+                        android:fontFamily="@font/instagram_sans"
+                        android:layout_marginTop="18dp"
+                        android:layout_marginLeft="-100dp"/>
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/noti6_preview"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/grid_pic15"
+                    android:layout_marginLeft="47dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/noti_item_7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <ImageView
+                    android:id="@+id/noti7_profile_pic"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/pfp4"
+                    android:layout_marginRight="10dp" />
+
+                <LinearLayout
+                    android:id="@+id/noti7_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/noti7_text"
+                        android:layout_width="225dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/notis_following_page_string6"
+                        android:textSize="14sp"
+                        android:textColor="@android:color/black"
+                        android:fontFamily="@font/instagram_sans"/>
+
+                    <TextView
+                        android:id="@+id/noti7_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="3h"
+                        android:textSize="14sp"
+                        android:textColor="@android:color/darker_gray"
+                        android:fontFamily="@font/instagram_sans"
+                        android:layout_marginTop="18dp"
+                        android:layout_marginLeft="-35dp"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/noti_item_8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/noti8_profile_pic"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/chat1"
+                    android:layout_marginRight="10dp" />
+
+                <LinearLayout
+                    android:id="@+id/noti8_content"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/noti8_header"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/noti8_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/notis_following_page_string7"
+                            android:textSize="14sp"
+                            android:textColor="@android:color/black"
+                            android:fontFamily="@font/instagram_sans"/>
+
+                        <TextView
+                            android:id="@+id/noti8_time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="3h"
+                            android:textSize="14sp"
+                            android:textColor="@android:color/darker_gray"
+                            android:layout_marginLeft="5dp"
+                            android:fontFamily="@font/instagram_sans"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/noti8_thumbs"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="5dp">
+
+                        <ImageView
+                            android:id="@+id/noti8_thumb1"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:src="@drawable/grid_pic1"
+                            android:layout_marginRight="5dp" />
+
+                        <ImageView
+                            android:id="@+id/noti8_thumb2"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:src="@drawable/grid_pic2"
+                            android:layout_marginRight="5dp" />
+
+                        <ImageView
+                            android:id="@+id/noti8_thumb3"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:src="@drawable/grid_pic3" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <View
+        android:id="@+id/bottom_divider"
+        android:layout_width="match_parent"
+        android:background="#33000000"
+        android:layout_height="1dp" />
+
+    <FrameLayout
+        android:id="@+id/bottom_nav_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <View
+            android:id="@+id/bottom_nav_top_divider"
+            android:background="#33000000"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_gravity="top" />
+
+        <LinearLayout
+            android:id="@+id/bottom_nav"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:elevation="4dp"
+            android:gravity="center"
+            android:layout_height="64dp"
+            android:background="@color/white">
+
+            <ImageView
+                android:id="@+id/bottom_nav_home"
+                android:layout_height="30dp"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:contentDescription="home"
+                android:src="@drawable/home_unhighlighted" />
+
+            <ImageView
+                android:id="@+id/bottom_nav_search"
+                android:contentDescription="search"
+                android:src="@drawable/search"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="30dp"
+                android:clickable="true"
+                android:focusable="true"/>
+
+            <ImageView
+                android:id="@+id/bottom_nav_create"
+                android:layout_width="0dp"
+                android:contentDescription="add"
+                android:layout_height="30dp"
+                android:src="@drawable/create"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:focusable="true"/>
+
+            <ImageView
+                android:id="@+id/bottom_nav_heart"
+                android:layout_width="0dp"
+                android:layout_height="25dp"
+                android:layout_weight="1"
+                android:src="@drawable/like_highlighted"
+                android:contentDescription="likes" />
+
+            <ImageView
+                android:id="@+id/bottom_nav_profile"
+                android:contentDescription="profile"
+                android:src="@drawable/pfp1"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="30dp" />
+        </LinearLayout>
+    </FrameLayout>
+
+</LinearLayout>

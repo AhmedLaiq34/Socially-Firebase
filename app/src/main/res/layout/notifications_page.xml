@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:id="@+id/main"
+    android:fitsSystemWindows="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="1"
+        android:layout_alignParentTop="true"
+        android:id="@+id/header">
+
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.3">
+
+            <ImageView
+                android:id="@+id/back_button"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/brown_back_button"
+                android:layout_centerInParent="true"
+                android:translationX="-30dp" />
+
+        </RelativeLayout>
+
+        <!-- Top Title -->
+        <TextView
+            android:id="@+id/notifcations_title"
+            android:layout_width="0dp"
+            android:layout_weight="0.4"
+            android:layout_height="wrap_content"
+            android:text="Notifcations"
+            android:textSize="23sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:padding="16dp"
+            android:fontFamily="@font/instagram_sans_headline"
+            android:textColor="@color/brown"
+            />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.3">
+
+        </View>
+
+    </LinearLayout>
+
+
+
+    <!-- Divider -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"
+        android:layout_below="@id/header"
+        android:id="@+id/divider_one"/>
+
+    <TextView
+        android:id="@+id/follow_requests_title"
+        android:padding="12dp"
+        android:text="Follow Requests"
+        android:layout_width="match_parent"
+        android:textStyle="bold"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:textColor="@color/brown"
+        android:fontFamily="@font/instagram_sans"
+        android:layout_below="@id/divider_one"/>
+
+    <View
+        android:id="@+id/follow_requests_divider"
+        android:layout_width="match_parent"
+        android:background="#33000000"
+        android:layout_height="1dp"
+        android:layout_below="@id/follow_requests_title"/>
+
+    <!-- RecyclerView for comments -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvComments"
+        android:layout_width="match_parent"
+        android:layout_height="280dp"
+        android:padding="8dp"
+        android:clipToPadding="false"
+        android:scrollbars="vertical"
+        tools:listitem="@layout/item_follow_request"
+        android:layout_below="@id/follow_requests_divider"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:background="#33000000"
+        android:layout_height="1.5dp"
+        android:id="@+id/divider_two"
+        android:layout_below="@id/rvComments"/>
+
+
+
+    <TextView
+        android:id="@+id/others_title"
+        android:padding="12dp"
+        android:text="Others"
+        android:layout_width="match_parent"
+        android:textStyle="bold"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:textColor="@color/brown"
+        android:fontFamily="@font/instagram_sans"
+        android:layout_below="@id/divider_two"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:background="#33000000"
+        android:layout_height="1dp"
+        android:id="@+id/divider_three"
+        android:layout_below="@id/others_title"/>
+
+
+
+
+
+    <View
+        android:id="@+id/bottom_divider"
+        android:layout_width="match_parent"
+        android:background="#33000000"
+        android:layout_height="1dp"
+        android:layout_above="@id/bottom_nav_container"
+        />
+
+    <FrameLayout
+        android:id="@+id/bottom_nav_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+
+        <View
+            android:id="@+id/bottom_nav_top_divider"
+            android:background="#33000000"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_gravity="top" />
+
+        <LinearLayout
+            android:id="@+id/bottom_nav"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:elevation="4dp"
+            android:gravity="center"
+            android:layout_height="64dp"
+            android:background="@color/white">
+
+            <ImageView
+                android:id="@+id/bottom_nav_home"
+                android:layout_height="25dp"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:contentDescription="home"
+                android:src="@drawable/home_unfilled" />
+
+            <ImageView
+                android:id="@+id/bottom_nav_search"
+                android:contentDescription="search"
+                android:src="@drawable/search"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="30dp"
+                android:clickable="true"
+                android:focusable="true"/>
+
+            <ImageView
+                android:id="@+id/bottom_nav_create"
+                android:layout_width="0dp"
+                android:contentDescription="add"
+                android:layout_height="25dp"
+                android:src="@drawable/upload_plus_bottom_nav"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:focusable="true"/>
+
+            <ImageView
+                android:id="@+id/bottom_nav_heart"
+                android:layout_width="0dp"
+                android:layout_height="25dp"
+                android:layout_weight="1"
+                android:src="@drawable/heart_filled"
+                android:contentDescription="likes" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/bottom_nav_profile"
+                android:contentDescription="profile"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="30dp" />
+        </LinearLayout>
+    </FrameLayout>
+
+
+
+</RelativeLayout>
