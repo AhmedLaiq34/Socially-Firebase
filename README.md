@@ -55,29 +55,24 @@ The system is composed of **three tiers**:
 
 ### 🔍 Explore / For You Page
 - Displays a **3-column grid of all posts** across the entire platform
-- Tapping the search bar navigates to `search_page` for username lookup
-- Uses `ForYouPageAdapter` with a `GridLayoutManager`
+- Tapping the search bar oprns search interface for username lookup
 
 ### 📸 Post Upload
-- Multi-image selection from the gallery (`Intent.EXTRA_ALLOW_MULTIPLE`)
-- All selected images converted to Base64 and stored in the `imagesBase64` list field of the `Post` model
+- Multi-image selection from the gallery.
 - Caption text supported
 - Post count in user stats atomically incremented using Firebase **Transaction** API (race-condition safe)
 - Tabbed UI to switch between "Post" and "Story" upload modes
 
 ### 📖 Stories
 - Single-image stories uploaded from gallery
-- Grouped by user in `UserStories` objects in the `stories` node
+- Grouped by user
 - Stories bar in home feed shows a ring-bordered circular avatar per user
-- Tapping opens a full-screen story viewer (`story_page`)
-- Own story management via `own_story_page`
+- Tapping opens a full-screen story viewer
+- Own story management
 
 ### 👤 User Profiles
 - Own profile: 3-column post grid, follower/following/post counts, edit profile, highlights
-- **Other users' profiles** (`celebrity_follow_page`): same layout with Follow / Requested / Following toggle button
-- Follow flow: creates a `notification` record with `type: "follow_request"` and `status: "pending"`
-- The target user sees it in `notifications_page` and can Accept (creates bidirectional followers/following entries with atomic stat increments) or Reject
-- Unfollow removes both the bidirectional relationship nodes and decrements stats
+- **Other users' profiles**: same layout with Follow / Requested / Following toggle button
 - Followers/Following lists are tappable and navigate to dedicated list pages
 
 ### 💬 Real-Time Messaging (1:1 Chat)
@@ -87,31 +82,28 @@ The system is composed of **three tiers**:
 - **Delete for everyone** within 5 minutes (removes from both nodes)
 - **Screenshot detection**: `ContentObserver` on `MediaStore.Images.Media.EXTERNAL_CONTENT_URI` detects new screenshots and writes a `screenshot` notification to the other user's notifications node
 - Incoming call banner shown inside the chat if the other user initiates an audio or video call
-- Chat list preview (`all_chats_page`) and user search for new chats (`add_chats_page`)
+- Chat list preview and user search for new chats
 
 ### 📞 Audio & Video Calls
 - Powered by **Agora RTC SDK 4.6.0** (`io.agora.rtc:full-sdk`)
-- Call signaling via Firebase Realtime Database (`/calls/{callerId}_{receiverId}` node)
-- Audio call (`call_page`): mute, speakerphone toggle, end call
-- Video call (`video_call_page`): camera toggle, mute, end call
-- Incoming call detected via `ChildEventListener` on the calls node — shows an in-chat banner
-- Permissions requested at runtime: `RECORD_AUDIO`, `CAMERA`, `BLUETOOTH_CONNECT`
+- Call signaling via Firebase Realtime Database
+- Audio call: mute, speakerphone toggle, end call
+- Video call: camera toggle, mute, end call
+- Incoming call detectede — shows an in-chat banner
 
 ### 🔔 Push Notifications (FCM)
 - **MyFirebaseMessagingService** (a `FirebaseMessagingService` subclass) handles incoming FCM messages on-device
-- The companion **Node.js server** (`Server/server.js`):
-  - Polls `/notifications` every **5 seconds** for `type: "follow_request"` with `status: "pending"` and `notified: false`
+- The companion **Node.js server**:
   - Listens in real-time via `child_added` on `/Chats` for new messages
   - Dispatches FCM push notifications via **Firebase Admin SDK** using the recipient's stored `fcmToken`
-  - Marks follow-request notifications as `notified: true` after dispatching
   - Skips messages sent before server startup to avoid duplicate notifications on restart
-- Notification types: **Follow Request**, **New Message**
+- Notification types: **Follow Request**, **New Messages**
 
 ### 📷 Camera & Content
-- In-app camera capture via the device camera (`camera_page`)
-- Story draft preview before posting (`story_draft`)
-- Post image view page (`post_view_page`)
-- Highlight albums accessible from the profile page (`highlight_page`)
+- In-app camera capture via the device camera
+- Story draft preview before posting 
+- Post image view page 
+- Highlight albums accessible from the profile page
 
 ---
 
