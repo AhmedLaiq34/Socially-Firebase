@@ -21,7 +21,7 @@
 
 ## 🏗️ System Architecture
 
-![Socially](assets/Socially.png)
+<img src="assets/Socially.png" alt="Socially" width="400"/>
 
 The system is composed of **three tiers**:
 
