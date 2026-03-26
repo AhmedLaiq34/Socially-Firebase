@@ -31,43 +31,6 @@ The system is composed of **three tiers**:
 
 ---
 
-## 🗄️ Firebase Database Schema
-
-![Firebase Realtime Database Schema](C:/Users/ahmed/.gemini/antigravity/brain/d58b94db-a8a5-4509-850b-a37b42a3bc52/firebase_schema_1774549008452.png)
-
-```
-/users/{userId}
-    /profile        → userId, email, username, displayName, firstName, lastName,
-                      dateOfBirth, bio, website, phoneNumber,
-                      profilePictureUrl (Base64), accountPrivate,
-                      isOnline, lastSeen, createdAt, fcmToken
-    /stats          → postCount, followerCount, followingCount
-    /followers      → { followerUserId: true }
-    /following      → { followedUserId: true }
-
-/posts/{postId}     → postId, userId, caption, imagesBase64[], likes,
-                      likedBy{userId:true}, createdAt
-
-/stories/{userId}   → userId, username, profilePictureBase64,
-                      stories[{storyId, storyImageBase64, createdAt}]
-
-/Chats/{senderId}/{receiverId}/{messageId}
-                    → senderId, receiverId, messageText, imageUrl (Base64),
-                      timestamp, type (text|image|post), messageId
-
-/notifications/{targetUserId}/{notifId}
-                    → fromUserId, type (follow_request|screenshot),
-                      status (pending|accepted|rejected),
-                      timestamp, notified, notifiedAt
-
-/calls/{callerId}_{receiverId}[_video]
-                    → type (voice|video), status (calling)
-
-/usernameLookup/{username_lowercase}  → userId
-```
-
----
-
 ## ✨ Key Features
 
 ![Feature Overview](C:/Users/ahmed/.gemini/antigravity/brain/d58b94db-a8a5-4509-850b-a37b42a3bc52/socially_features_1774549025823.png)
