@@ -1,6 +1,6 @@
 # Socially — Firebase-Powered Social Media Android App
 
-> A feature-rich, Instagram-inspired Android social media platform built with **Kotlin**, **Firebase**, and **Agora RTC**, created as a university assignment response to a detailed requirements specification.
+> A feature-rich, Instagram-inspired Android social media platform built with **Kotlin**, **Firebase**, and **Agora RTC**.
 
 ---
 
