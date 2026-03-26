@@ -1,1 +1,35 @@
-﻿Server/serviceAccountKey.json
+﻿# Gradle files
+.gradle/
+build/
+*/build/
+gradlew.bat
+gradlew
+
+# Local configuration file (contains your local Android SDK path and secrets)
+local.properties
+
+# Android Studio / IntelliJ IDEA files
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Built application files (APKs and App Bundles)
+*.apk
+*.ap_
+*.aab
+*.dex
+*.class
+
+# Keystore files (Crucial: NEVER commit your release keystores)
+*.jks
+*.keystore
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Server/Backend secrets (since you have a Server directory)
+Server/node_modules/
+Server/.env
+Server/serviceAccountKey.json
