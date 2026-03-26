@@ -183,10 +183,5 @@ The server listens on port **3000** by default (configurable via `PORT` environm
 
 ---
 
-## 🎓 Assignment Context
-
-This project was built as a graded university assignment. The `Assignment.pdf` in the repository root contains the full requirements specification that drove the feature set, including the social graph model, messaging requirements, call functionality, notification subsystem, and profile management details.
-
----
 
 *Built with ❤️ using Kotlin, Firebase, and Agora RTC*
