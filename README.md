@@ -21,7 +21,7 @@
 
 ## 🏗️ System Architecture
 
-![Socially System Architecture](C:/Users/ahmed/.gemini/antigravity/brain/d58b94db-a8a5-4509-850b-a37b42a3bc52/socially_architecture_1774548992727.png)
+![Socially](assets/Socially.png)
 
 The system is composed of **three tiers**:
 
