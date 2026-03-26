@@ -33,7 +33,6 @@ The system is composed of **three tiers**:
 
 ## ✨ Key Features
 
-![Feature Overview](C:/Users/ahmed/.gemini/antigravity/brain/d58b94db-a8a5-4509-850b-a37b42a3bc52/socially_features_1774549025823.png)
 
 ### 🔐 Authentication & Account Management
 - Email/password registration and login via **Firebase Authentication**
