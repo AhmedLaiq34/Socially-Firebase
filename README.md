@@ -37,13 +37,13 @@ The system is composed of **three tiers**:
 
 ### 🔐 Authentication & Account Management
 - Email/password registration and login via **Firebase Authentication**
-- **Username-based login** — usernames are resolved to emails via the `usernameLookup` node before authentication
+- **Username-based login** — usernames are resolved to emails before authentication
 - Username uniqueness enforced at registration via a pre-check query
 - Profile picture selected from gallery, compressed to ≤400×400px, and stored as **Base64** in the Realtime Database
 - **FCM token** automatically saved to the user profile on every login for push delivery
-- Age validation (minimum 13 years) enforced with a `DatePickerDialog`
-- Multi-account switching screen (`switch_accounts_page`)
-- Online/offline presence tracking with `lastSeen` timestamp
+- Age validation (minimum 13 years) enforced.
+- Multi-account switching screen.
+- Online/offline presence tracking.
 
 ### 📰 Home Feed
 - Displays posts only from users the current user **follows** (plus their own)
